@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata Mosquito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="Imagens/game.png">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">--Selecionar o nível--</option>
+                            <option value="normal">Normal</option>
+                            <option value="dificil">Dificil</option>
+                            <option value="impossivel">Impossível</option>
+                        </select>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button type="button" onclick="iniciarGame()" class="btn btn-danger btn-lg">Iniciar jogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function iniciarGame() {
+            var nivel = document.getElementById('nivel').value
+            if(nivel === ''){
+                alert('Selecione um nível abaixo.')
+                // esse return é importante para encerrar a logica
+                return false
+            }
+            // Uso do interrogação serve para pegar o parametro escolhido, não é muito convencional mas por enquanto tudo bem usar.
+            window.location.href = 'game.html?' + nivel
+        }
+    </script>
+</body>
+</html>
